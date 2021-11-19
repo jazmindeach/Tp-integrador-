@@ -1,5 +1,6 @@
 window.addEventListener("load",function(){    //Controlar que todo el HTML este en el navegador 
 
+    
     let detallepelicula = location.search
     let detallePeliculaObjeto = new URLSearchParams(detallepelicula)
     let id = detallePeliculaObjeto.get("id")
@@ -11,7 +12,7 @@ window.addEventListener("load",function(){    //Controlar que todo el HTML este 
     .then(function(datos){
         console.log(datos);
         
-        //Le doy 
+        //Le doy a generos el valor del array de generos 
         var genre = datos.genres
         var generos = "";
         for (var i = 0; i < genre.length; i++) {
