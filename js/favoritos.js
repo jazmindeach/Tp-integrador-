@@ -23,4 +23,22 @@ for(let i= 0; i < peliculas.length; i++) {
 
 }
 
+cajaPadreFavoritos.innerHTML += articulos; 
+
+//lo mismo para series
+
+
+
+for(let i= 0; i < series.length; i++) {
+   
+    let serie = series [i];
+
+    
+    articulos += `
+    <article class="listadoPeliculas">
+    <a href="../Tp-integrador-/detail-movie.html?id=${serie.id}"><img src="https://image.tmdb.org/t/p/w342${serie.backdrop_path}" alt="${pelicula.original_title}"></a>
+    <h3><a href="../Tp-integrador-/detail-movie.html"> ${serie.original_name}</a></h3>
+</article>`
+
+}
 
