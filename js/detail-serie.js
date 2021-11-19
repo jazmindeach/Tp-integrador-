@@ -34,9 +34,67 @@ window.addEventListener("load",function(){    //Controlar que todo el HTML este 
                   <p> Capitulos: ${datos.number_of_episodes}</p>
                   <p> Fecha de estreno: ${datos.first_air_date} </p>
                   <p> Calificación: ${datos.vote_average} </p> 
-                  <a href="#"><h4> Agregar a mis favoritos <i class="fas fa-heart"></i></h4></a>
+                  <a>
+                    <h4 class="ocultarElemento" id="agregar"> Agregar a mis favoritos <i class="fas fa-heart"></i></h4>
+                    <h4 class="ocultarElemento" id="eliminar"> Agregar a mis favoritos <i class="fas fa-heart"></i></h4>
+                  </a>
           </article>`
        
+          // boton de favoritos
+          let series = [];
+
+          let seriesEnStorage = localStorage.getItem('series');
+
+          if(seriesEnStorage != null){
+              series = JSON.parse(seriesEnStorage);
+          }
+
+          //preguntamos si la pelicula existe en el array
+         
+          let encontrado = false;
+          let indice; 
+
+          for( let i = 0; i < series.length; i++) {
+              if(id == series[i].id){
+                  encontrado = true;
+                  indice = i; 
+              }
+          }
+
+          //hago aparecer los botones segun si encuentra la pelicula o no 
+
+          if(encontrado) { 
+              let eliminar = document.querySelector("#eliminar");
+
+              eliminar.style.display = 'block';
+
+              eliminar.addEventListener('click', function(){
+
+               series.splice(indice, i);
+
+               localStorage.setItem('series', JSON.stringify(series))
+
+               location.reload();
+              })
+          }
+          
+          else {
+              let agregar = document.querySelector("#agregar");
+
+              agregar.style.display = 'block';
+
+              agregar.addEventListener('click', function(){
+
+                  series.push[datos];
+
+                  localStorage.setItem('series',JSON.stringify(series))
+              
+                  location.reload(); 
+              })
+          }
+
+
+          //ahora tengo que capturar el click dentro de los corchetes else
 
     })
     .catch(function(error){
