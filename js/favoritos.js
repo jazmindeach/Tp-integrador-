@@ -18,7 +18,7 @@ for(let i= 0; i < peliculas.length; i++) {
     articulos += `
     <article class="listadoPeliculas">
     <a href="../Tp-integrador-/detail-movie.html?id=${pelicula.id}"><img src="https://image.tmdb.org/t/p/w342${pelicula.backdrop_path}" alt="${pelicula.original_title}"></a>
-    <h3><a href="../Tp-integrador-/detail-movie.html"> ${pelicula.original_title}</a></h3>
+    <h3><a href="../Tp-integrador-/detail-movie.html?id=${pelicula.id}"> ${pelicula.original_title}</a></h3>
 </article>`
 
 }
@@ -36,9 +36,10 @@ for(let i= 0; i < series.length; i++) {
     
     articulos += `
     <article class="listadoPeliculas">
-    <a href="../Tp-integrador-/detail-movie.html?id=${serie.id}"><img src="https://image.tmdb.org/t/p/w342${serie.backdrop_path}" alt="${pelicula.original_title}"></a>
-    <h3><a href="../Tp-integrador-/detail-movie.html"> ${serie.original_name}</a></h3>
+    <a href="../Tp-integrador-/detail-series.html?id=${serie.id}"><img src="https://image.tmdb.org/t/p/w342${serie.backdrop_path}" alt="${pelicula.original_title}"></a>
+    <h3><a href="../Tp-integrador-/detail-series.html?id=${serie.id}"> ${serie.original_name}</a></h3>
 </article>`
 
 }
 
+cajaPadreFavoritos.innerHTML += articulos; 
