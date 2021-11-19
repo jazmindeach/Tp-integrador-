@@ -35,9 +35,12 @@ window.addEventListener("load",function(){    //Controlar que todo el HTML este 
                   <p> Duración: ${datos.runtime}</p>
                   <p> Fecha de estreno: ${datos.release_date} </p>
                   <p> Calificación: ${datos.vote_average} </p> 
-                  <a href="#"><h4> Agregar a mis favoritos <i class="fas fa-heart"></i></h4></a>
+                  <a href="#">
+                    <h4 class="ocultarElemento"> Agregar a mis favoritos <i class="fas fa-heart"></i></h4></a>
           </article>`
        
+// boton de favoritos
+
 
     })
     .catch(function(error){
