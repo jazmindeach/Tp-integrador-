@@ -35,11 +35,70 @@ window.addEventListener("load",function(){    //Controlar que todo el HTML este 
                   <p> Duración: ${datos.runtime}</p>
                   <p> Fecha de estreno: ${datos.release_date} </p>
                   <p> Calificación: ${datos.vote_average} </p> 
-                  <a href="#">
-                    <h4 class="ocultarElemento"> Agregar a mis favoritos <i class="fas fa-heart"></i></h4></a>
+                  <a>
+                    <h4 class="ocultarElemento" id="agregar"> Agregar a mis favoritos <i class="fas fa-heart"></i></h4>
+                    <h4 class="ocultarElemento" id="eliminar"> Agregar a mis favoritos <i class="fas fa-heart"></i></h4>
+                    </a>
           </article>`
        
-// boton de favoritos
+            // boton de favoritos
+            let peliculas = [];
+
+            let peliculasEnStorage = localStorage.getItem('peliculas');
+
+            if(peliculasEnStorage != null){
+                peliculas = JSON.parse(peliculasEnStorage);
+            }
+
+            //preguntamos si la pelicula existe en el array
+           
+            let encontrado = false;
+            let indice; 
+
+            for( let i = 0; i < peliculas.length; i++) {
+                if(id == peliculas[i].id){
+                    encontrado = true;
+                    indice = i; 
+                }
+            }
+
+            //hago aparecer los botones segun si encuentra la pelicula o no 
+
+            if(encontrado) { 
+                let eliminar = document.querySelector("#eliminar");
+
+                eliminar.style.display = 'block';
+
+                eliminar.addEventListener('click', function(){
+
+                 peliculas.splice(indice, i);
+
+                 localStorage.setItem('peliculas', JSON.stringify(peliculas))
+
+                 location.reload();
+                })
+            }
+            
+            else {
+                let agregar = document.querySelector("#agregar");
+
+                agregar.style.display = 'block';
+
+                agregar.addEventListener('click', function(){
+
+                    peliculas.push(datos);
+
+                    localStorage.setItem('peliculas',JSON.stringify(peliculas))
+                
+                    location.reload(); 
+                })
+            }
+
+
+            //ahora tengo que capturar el click dentro de los corchetes else
+
+
+
 
 
     })
