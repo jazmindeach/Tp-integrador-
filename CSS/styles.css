@@ -72,9 +72,10 @@ h1{
     
 }
 
-h2 .titulos{
+ .titulos{
     text-transform: uppercase;
     font-size: medium;
+    
 }
 
 .cajapadre{
@@ -98,6 +99,7 @@ h2 .titulos{
     justify-content: space-around;
     line-height: 6px;
     color: white;
+    
 }
 
 
@@ -310,8 +312,12 @@ a{
 
 .ocultarElemento{
     display: none;
+
 }
 
+.mouse: hover{
+    cursor: pointer
+}
 
 
 

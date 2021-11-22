@@ -1,8 +1,8 @@
 window.addEventListener("load",function(){    //Controlar que todo el HTML este en el navegador 
 
     
-    let detallepelicula = location.search
-    let detallePeliculaObjeto = new URLSearchParams(detallepelicula)
+    let detallepelicula = location.search //tods la url
+    let detallePeliculaObjeto = new URLSearchParams(detallepelicula) 
     let id = detallePeliculaObjeto.get("id")
     
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=0d278db4bda20f994d6bf90837dc480e&language=en-US`)
@@ -36,8 +36,8 @@ window.addEventListener("load",function(){    //Controlar que todo el HTML este 
                   <p> Fecha de estreno: ${datos.release_date} </p>
                   <p> Calificación: ${datos.vote_average} </p> 
                   <a>
-                    <h4 class="ocultarElemento" id="agregar"> Agregar a mis favoritos <i class="fas fa-heart"></i></h4>
-                    <h4 class="ocultarElemento" id="eliminar"> Agregar a mis favoritos <i class="fas fa-heart"></i></h4>
+                    <h4 class="ocultarElemento mouse" id="agregar"> Agregar a mis favoritos <i class="fas fa-heart"></i></h4>
+                    <h4 class="ocultarElemento mouse" id="eliminar"> Eliminar de mis favoritos <i class="fas fa-heart"></i></h4>
                     </a>
           </article>`
        
