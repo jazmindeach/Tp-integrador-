@@ -1,6 +1,6 @@
 let peliculas = [];
 
-let peliculasEnStorage = localStorage.setItem('peliculas');
+let peliculasEnStorage = localStorage.getItem('peliculas');
 
 if(peliculasEnStorage != null) {
     peliculas = JSON.parse(peliculasEnStorage); 
@@ -23,11 +23,17 @@ for(let i= 0; i < peliculas.length; i++) {
 
 }
 
-cajaPadreFavoritos.innerHTML += articulos; 
+cajaPadreFavoritos.innerHTML = articulos; 
 
 //lo mismo para series
 
+let series = [];
 
+let seriesEnStorage = localStorage.getItem('series');
+
+if(seriesEnStorage != null) {
+    series = JSON.parse(seriesEnStorage); 
+}
 
 for(let i= 0; i < series.length; i++) {
    
@@ -36,10 +42,10 @@ for(let i= 0; i < series.length; i++) {
     
     articulos += `
     <article class="listadoPeliculas">
-    <a href="../Tp-integrador-/detail-series.html?id=${serie.id}"><img src="https://image.tmdb.org/t/p/w342${serie.backdrop_path}" alt="${pelicula.original_title}"></a>
+    <a href="../Tp-integrador-/detail-series.html?id=${serie.id}"><img src="https://image.tmdb.org/t/p/w342${serie.backdrop_path}" alt="${serie.original_name}"></a>
     <h3><a href="../Tp-integrador-/detail-series.html?id=${serie.id}"> ${serie.original_name}</a></h3>
 </article>`
 
 }
 
-cajaPadreFavoritos.innerHTML += articulos; 
+cajaPadreFavoritos.innerHTML = articulos; 

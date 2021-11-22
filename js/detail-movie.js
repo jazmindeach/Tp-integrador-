@@ -86,7 +86,7 @@ window.addEventListener("load",function(){    //Controlar que todo el HTML este 
 
                 agregar.addEventListener('click', function(){
 
-                    peliculas.push[datos];
+                    peliculas.push(datos);
 
                     localStorage.setItem('peliculas',JSON.stringify(peliculas))
                 

@@ -36,7 +36,7 @@ window.addEventListener("load",function(){    //Controlar que todo el HTML este 
                   <p> Calificación: ${datos.vote_average} </p> 
                   <a>
                     <h4 class="ocultarElemento" id="agregar"> Agregar a mis favoritos <i class="fas fa-heart"></i></h4>
-                    <h4 class="ocultarElemento" id="eliminar"> Agregar a mis favoritos <i class="fas fa-heart"></i></h4>
+                    <h4 class="ocultarElemento" id="eliminar"> Eliminar de mis favoritos <i class="fas fa-heart"></i></h4>
                   </a>
           </article>`
        
@@ -70,7 +70,7 @@ window.addEventListener("load",function(){    //Controlar que todo el HTML este 
 
               eliminar.addEventListener('click', function(){
 
-               series.splice(indice, i);
+               series.splice(indice, 1);
 
                localStorage.setItem('series', JSON.stringify(series))
 
@@ -85,7 +85,7 @@ window.addEventListener("load",function(){    //Controlar que todo el HTML este 
 
               agregar.addEventListener('click', function(){
 
-                  series.push[datos];
+                  series.push(datos);
 
                   localStorage.setItem('series',JSON.stringify(series))
               
