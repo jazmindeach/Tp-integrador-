@@ -21,7 +21,7 @@ if (categoria == "pelicula") {
         datos.results.forEach(data => {
             cajagenero.innerHTML += `<artcile class="cajahija"><a href="detail-movie.html?id=${data.id}"> <img class="" src="https://image.tmdb.org/t/p/w500/${data.poster_path}"></a>
             <div> 
-            <h3 class="titulos"> <a href="detail-movie.html?${data.id}"> ${data.title} </a> </h3>
+            <h3 class="titulos"> <a href="detail-movie.html?id=${data.id}"> ${data.title} </a> </h3>
             
             </div>
             </article>`
@@ -46,7 +46,7 @@ if (categoria == "pelicula") {
     datos.results.forEach(data => {
         cajagenero.innerHTML += `<artcile class="cajahija"><a href="detail-series.html?id=${data.id}"> <img class="" src="https://image.tmdb.org/t/p/w500/${data.poster_path}"></a>
         <div> 
-        <h3 class="titulos"> <a href="detail-series.html?${data.id}"> ${data.name} </a> </h3>
+        <h3 class="titulos"> <a href="detail-series.html?id=${data.id}"> ${data.name} </a> </h3>
         
         </div>
         </article>`

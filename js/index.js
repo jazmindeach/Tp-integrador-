@@ -13,9 +13,9 @@ fetch("https://api.themoviedb.org/3/movie/popular?api_key=0d278db4bda20f994d6bf9
         //Capturamos el elemento del DOM que queremos modificar
         let peliculasPopulares = document.getElementById ("1")
         datos.results.forEach(data => {
-            peliculasPopulares.innerHTML += `<artcile class="cajahija"><a href="detail-movie.html?id=${data.id}"> <img class="" src="https://image.tmdb.org/t/p/w500/${data.poster_path}"></a>
+            peliculasPopulares.innerHTML += `<article class="cajahija"><a href="detail-movie.html?id=${data.id}"> <img class="" src="https://image.tmdb.org/t/p/w500/${data.poster_path}"></a>
             <div> 
-            <h3 class="titulos"> <a href="detail-movie.html"> ${data.title} </a> </h3>
+            <h3 class="titulos"> <a href="detail-movie.html?id=${data.id}"> ${data.title} </a> </h3>
             
             </div>
             </article>`
