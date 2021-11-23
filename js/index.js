@@ -2,17 +2,17 @@ window.addEventListener("load",function(){    //Controlar que todo el HTML este 
 
 
 
-fetch("https://api.themoviedb.org/3/movie/popular?api_key=0d278db4bda20f994d6bf90837dc480e&language=en-US&page=1") //Trae la infromacion de la API de peliculas con fetch
-    .then(function(respuesta){
+fetch("https://api.themoviedb.org/3/movie/popular?api_key=0d278db4bda20f994d6bf90837dc480e&language=en-US&page=1") //genera una promesa. Trae la infromacion de la API de peliculas con fetch
+    .then(function(respuesta){ //espero que me traiga la infromación para hacer lo que wuiero
         return respuesta.json()   //Convierte los datos a formato JSON
     })
-    .then(function(datos){
-        console.log(datos);
-        console.log(datos.results[0]);   //Obtenemos los datos que necesitamos
+    .then(function(datos){ //
+        console.log(datos); //imprimo los datos 
+        console.log(datos.results[0]);   // Obtenemos los datos que necesitamos imprimo los resutados
 
         //Capturamos el elemento del DOM que queremos modificar
-        let peliculasPopulares = document.getElementById ("1")
-        datos.results.forEach(data => {
+        let peliculasPopulares = document.getElementById ("1") // Para que se visualice 
+       datos.results.forEach(data => {
             peliculasPopulares.innerHTML += `<article class="cajahija"><a href="detail-movie.html?id=${data.id}"> <img class="" src="https://image.tmdb.org/t/p/w500/${data.poster_path}"></a>
             <div> 
             <h3 class="titulos"> <a href="detail-movie.html?id=${data.id}"> ${data.title} </a> </h3>
