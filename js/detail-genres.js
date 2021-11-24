@@ -17,14 +17,14 @@ if (categoria == "pelicula") {
     .then(function(datos){
         console.log(datos);
        titulogenero.innerHTML= `Usted buscó películas del género ${name}`
-        datos.results.forEach(data => {
-            cajagenero.innerHTML += `<artcile class="cajahija"><a href="detail-movie.html?id=${data.id}"> <img class="" src="https://image.tmdb.org/t/p/w500/${data.poster_path}"></a>
-            <div> 
-            <h3 class="titulos"> <a href="detail-movie.html?id=${data.id}"> ${data.title} </a> </h3>
-            
-            </div>
-            </article>`
-        })
+       for(let i = 0; i <datos.results.length; i++){
+        cajagenero.innerHTML += `<article class="cajahija"><a href="detail-movie.html?id=${datos.results[i].id}"> <img class="" src="https://image.tmdb.org/t/p/w500/${datos.results[i].poster_path}"></a>
+        <div> 
+        <h3 class="titulos"> <a href="detail-movie.html?id=${datos.results[i].id}"> ${datos.results[i].title} </a> </h3>
+        
+        </div>
+        </article>`
+    }
     
 
     
@@ -42,14 +42,15 @@ if (categoria == "pelicula") {
 .then(function(datos){
     console.log(datos);
    titulogenero.innerHTML= `Usted buscó series del género ${name}`
-    datos.results.forEach(data => {
-        cajagenero.innerHTML += `<artcile class="cajahija"><a href="detail-series.html?id=${data.id}"> <img class="" src="https://image.tmdb.org/t/p/w500/${data.poster_path}"></a>
-        <div> 
-        <h3 class="titulos"> <a href="detail-series.html?id=${data.id}"> ${data.name} </a> </h3>
-        
-        </div>
-        </article>`
-    })
+     for(let i = 0; i <datos.results.length; i++){
+                    
+    cajagenero.innerHTML += `<artcile class="cajahija"><a href="detail-series.html?id=${datos.results[i].id}"> <img class="" src="https://image.tmdb.org/t/p/w500/${datos.results[i].poster_path}"></a>
+    <div> 
+    <h3 class="titulos"> <a href="detail-movie.html"> ${datos.results[i].name} </a> </h3>
+    
+    </div>
+    </article>`
+}
 
 
 
