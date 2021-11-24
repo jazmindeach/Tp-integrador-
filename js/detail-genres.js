@@ -1,6 +1,6 @@
-window.addEventListener("load",function(){    //Controlar que todo el HTML este en el navegador 
+window.addEventListener("load",function(){   
 
-    let detallepelicula = location.search
+    let detallepelicula = location.search // capturo media quary
     let detallePeliculaObjeto = new URLSearchParams(detallepelicula)
     let id = detallePeliculaObjeto.get("id")
     let name = detallePeliculaObjeto.get("name")
@@ -8,12 +8,11 @@ window.addEventListener("load",function(){    //Controlar que todo el HTML este 
     let titulogenero= document.querySelector(".titulogenero")
     let cajagenero= document.querySelector(".cajaGenero")
     
-
 if (categoria == "pelicula") {
     
     fetch(`https://api.themoviedb.org/3/discover/movie?api_key=0d278db4bda20f994d6bf90837dc480e&language=en-US&sort_by=popularity.desc&with_genres=${id}`)
     .then(function(respuesta){
-        return respuesta.json()   //Convierte los datos a formato JSON
+        return respuesta.json()   
     })
     .then(function(datos){
         console.log(datos);
@@ -38,7 +37,7 @@ if (categoria == "pelicula") {
 } else {     
     fetch(`https://api.themoviedb.org/3/discover/tv?api_key=0d278db4bda20f994d6bf90837dc480e&language=en-US&sort_by=popularity.desc&with_genres=${id}`)
 .then(function(respuesta){
-    return respuesta.json()   //Convierte los datos a formato JSON
+    return respuesta.json()   
 })
 .then(function(datos){
     console.log(datos);
